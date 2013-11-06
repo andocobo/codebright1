@@ -1,0 +1,1 @@
+This app is based off the first 'build an app' chapter in Code Bright by Dayle Rees. It also includes some additional code that I created such as a validation service to validate the forms, notices when actions have been performed and user authentication.
