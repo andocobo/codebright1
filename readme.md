@@ -1,3 +1,7 @@
+## App Based on Tutorial From Code Bright by Dayle Rees
+
+This app is based off the first 'build an app' chapter in Code Bright by Dayle Rees. It also includes some additional code that I created such as a validation service to validate the forms, notices when actions have been performed and user authentication.
+
 ## Laravel PHP Framework
 
 [![Latest Stable Version](https://poser.pugx.org/laravel/framework/version.png)](https://packagist.org/packages/laravel/framework) [![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.png)](https://packagist.org/packages/laravel/framework) [![Build Status](https://travis-ci.org/laravel/framework.png)](https://travis-ci.org/laravel/framework)
