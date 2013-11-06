@@ -8,9 +8,19 @@ class GamesController extends BaseController
 	{
 
 		// Show a listing of games
-		$games = Game::orderBy('title')->get();
+		if (Auth::check())
+		{
+			$data['check'] = 'User is currently logged in.';
+		}
 
-		return View::make('index', compact('games')); // Compact is a PHP function (not Laravel). It create an array out of a number of variables.
+		else
+		{
+			$data['check'] = 'User is NOT currently logged in.';
+		}
+
+		$data['games'] = Game::orderBy('title')->get();
+
+		return View::make('index', compact('data')); // Compact is a PHP function (not Laravel). It create an array out of a number of variables.
 	}
 
 	public function create()

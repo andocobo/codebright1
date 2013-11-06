@@ -2,8 +2,12 @@
 
 @section('content')
 
+	<!-- Indicates caution should be taken with this action -->
+	<a style="float: right;" href="{{ action('UserController@logoutAction') }}" class="btn btn-warning">Logout</a>
+	
 	<div class="page-header">
 		<h1>All Games <small>Gotta catch 'em all!</small></h1>
+		<h6>Welcome to your games, {{ Auth::user()->username }}</h6>
 	</div>
 
 	<div class="panel panel-default">
@@ -29,6 +33,8 @@
 	        <strong>Success!</strong> {{ Session::get('updated') }}
 	    </div>
 	@endif
+
+	<?php $games = $data['games']; ?>
 
 	@if ($games->isEmpty())
 		<p>There are no games</p>

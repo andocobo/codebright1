@@ -11,20 +11,22 @@
 |
 */
 
-
 // Bind route paramenters.
 Route::model('game', 'Game');
 
-// Show pages
+//Login and logout
+Route::any('/', 'UserController@handleLogin');
+Route::get('/logout', 'UserController@logoutAction');
 
-Route::get('/', 'GamesController@index');
-Route::get('/create', 'GamesController@create');
-Route::get('/edit/{game}', 'GamesController@edit');
-Route::get('/delete/{game}', 'GamesController@delete');
+// Show pages
+Route::get('/games', 'GamesController@index')->before('auth');
+Route::get('/create', 'GamesController@create')->before('auth');
+Route::get('/edit/{game}', 'GamesController@edit')->before('auth');
+Route::get('/delete/{game}', 'GamesController@delete')->before('auth');
 
 // Handle form submissions
-Route::post('/create', 'GamesController@handleCreate');
-Route::post('/edit', 'GamesController@handleEdit');
-Route::post('/delete', 'GamesController@handleDelete');
+Route::post('/create', 'GamesController@handleCreate')->before('auth');
+Route::post('/edit', 'GamesController@handleEdit')->before('auth');
+Route::post('/delete', 'GamesController@handleDelete')->before('auth');
 
 
